@@ -1,47 +1,51 @@
-Ò»¡¢cloud-register(ÔÆ·şÎñ×¢²áÖĞĞÄ)
-   1.ÒıÈëÒÀÀµ
+V1.1: æä¾›é»˜è®¤é…ç½®ï¼Œæ— éœ€ä»»ä½•é…ç½®å³å¯è¿è¡Œå¾®æœåŠ¡
+
+äº‘ç»„ä»¶æ€»å…±åŒ…å«cloud-register(äº‘æœåŠ¡æ³¨å†Œä¸­å¿ƒ)ã€cloud-server(äº‘æœåŠ¡æä¾›è€…)ã€cloud-client(æœåŠ¡æ¶ˆè´¹è€…)
+
+ä¸€ã€cloud-register(äº‘æœåŠ¡æ³¨å†Œä¸­å¿ƒ)
+   1.å¼•å…¥ä¾èµ–
         <dependency>
 			<groupId>com.wl</groupId>
 			<artifactId>cloud-register</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	2.°´ÕÕÒÀÀµjar°ü£¨cloud-register£©ÖĞÌá¹©µÄÅäÖÃÎÄ¼şÄ£°å£¨application.properties£©ÅäÖÃ
-	    #×¢²áÖĞĞÄ¶Ë¿Ú
+	2.æŒ‰ç…§ä¾èµ–jaråŒ…ï¼ˆcloud-registerï¼‰ä¸­æä¾›çš„é…ç½®æ–‡ä»¶æ¨¡æ¿ï¼ˆapplication.propertiesï¼‰é…ç½®
+	    #æ³¨å†Œä¸­å¿ƒç«¯å£
 		server.port=8671
 
-		#×¢²áÖĞĞÄÖ÷»úµØÖ·
+		#æ³¨å†Œä¸­å¿ƒä¸»æœºåœ°å€
 		eureka.instance.hostname=localhost
 
-		#±êÊ¶×Ô¼ºÊÇ×¢²áÖĞĞÄ
+		#æ ‡è¯†è‡ªå·±æ˜¯æ³¨å†Œä¸­å¿ƒ
 		eureka.client.register-with-eureka=false
 
-		#±êÊ¶×Ô¼ºÊÇ×¢²áÖĞĞÄ
+		#æ ‡è¯†è‡ªå·±æ˜¯æ³¨å†Œä¸­å¿ƒ
 		eureka.client.fetch-registry=false
 
-		#×¢²áµØÖ·
+		#æ³¨å†Œåœ°å€
 		eureka.client.service-url.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka
-		
-¶ş¡¢cloud-server(ÔÆ·şÎñÌá¹©Õß)
-	±¾·şÎñĞèÒªÁ½¸ö×ÓÄ£¿é£¬Ò»¸öÊÇ·şÎñÊµÏÖÄ£¿é£¨ÀıÈçcloud-service£©£¬ÁíÒ»¸öÊÇ¶Ô¿Í»§¶ËÌá¹©½Ó¿ÚµÄapiÄ£¿é£¨ÀıÈçcloud-service-api£©
-	1.cloud-service£¨·şÎñÊµÏÖÄ£¿é£©
-		(1).ÒıÈëÒÀÀµ
+
+äºŒã€cloud-server(äº‘æœåŠ¡æä¾›è€…)
+	æœ¬æœåŠ¡éœ€è¦ä¸¤ä¸ªå­æ¨¡å—ï¼Œä¸€ä¸ªæ˜¯æœåŠ¡å®ç°æ¨¡å—ï¼ˆä¾‹å¦‚cloud-serviceï¼‰ï¼Œå¦ä¸€ä¸ªæ˜¯å¯¹å®¢æˆ·ç«¯æä¾›æ¥å£çš„apiæ¨¡å—ï¼ˆä¾‹å¦‚cloud-service-apiï¼‰
+	1.cloud-serviceï¼ˆæœåŠ¡å®ç°æ¨¡å—ï¼‰
+		(1).å¼•å…¥ä¾èµ–
 			<dependency>
 				<groupId>com.wl</groupId>
 				<artifactId>cloud-server</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
-		(2).°´ÕÕÒÀÀµjar°ü£¨cloud-service£©ÖĞÌá¹©µÄÅäÖÃÎÄ¼şÄ£°å£¨application.properties£©ÅäÖÃ
-			#·şÎñ¶Ë¿Ú
+		(2).æŒ‰ç…§ä¾èµ–jaråŒ…ï¼ˆcloud-serviceï¼‰ä¸­æä¾›çš„é…ç½®æ–‡ä»¶æ¨¡æ¿ï¼ˆapplication.propertiesï¼‰é…ç½®
+			#æœåŠ¡ç«¯å£
 			server.port=8763
 
-			#×¢²áÖĞĞÄ×¢²áµØÖ·
+			#æ³¨å†Œä¸­å¿ƒæ³¨å†Œåœ°å€
 			eureka.client.service-url.defaultZone=http://localhost:8671/eureka
 
-			#·şÎñÃû
+			#æœåŠ¡å
 			spring.application.name=cloud-service
-		(3).±àĞ´¾ßÌå·şÎñ£¬²¢±©Â¶rest½Ó¿Ú
-		
-		service¼òµ¥Àı×Ó£º
+		(3).ç¼–å†™å…·ä½“æœåŠ¡ï¼Œå¹¶æš´éœ²restæ¥å£
+
+		serviceç®€å•ä¾‹å­ï¼š
 			@RestController
 			public class CloudService {
 
@@ -50,44 +54,44 @@
 					return "hello";
 				}
 			}
-			
-	2.cloud-service-api(¶ÔÍâ½Ó¿ÚapiÄ£¿é)
-		(1).ÒıÈëÒÀÀµ
+
+	2.cloud-service-api(å¯¹å¤–æ¥å£apiæ¨¡å—)
+		(1).å¼•å…¥ä¾èµ–
 			<dependency>
 				<groupId>com.wl</groupId>
 				<artifactId>cloud-client</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
-		(2).ÔÚapi½Ó¿ÚÉÏÔö¼Ó×¢½â
-			@FeignClient(value = "CLOUD-SERVICE")£¬Ö¸¶¨Îª±¾·şÎñÃû
-		(3).ÔÚ¾ßÌå·½·¨ÉÏÔö¼Ó@RequestMapping×¢½â
-		
-		api¼òµ¥Àı×Ó£º
+		(2).åœ¨apiæ¥å£ä¸Šå¢åŠ æ³¨è§£
+			@FeignClient(value = "CLOUD-SERVICE")ï¼ŒæŒ‡å®šä¸ºæœ¬æœåŠ¡å
+		(3).åœ¨å…·ä½“æ–¹æ³•ä¸Šå¢åŠ @RequestMappingæ³¨è§£
+
+		apiç®€å•ä¾‹å­ï¼š
 			@FeignClient(value = "CLOUD-SERVICE")
 			public interface CloudServiceApi {
 
 				@RequestMapping(value = "/hello", method = RequestMethod.GET)
 				String hello(@RequestParam(value = "name") String name);
 			}
-			
-Èı¡¢¾ßÌå¿Í»§¶Ë(·şÎñÏû·ÑÕß)
-	1.ÒıÈëÔÆ·şÎñÌá¹©µÄapi½Ó¿ÚÒÀÀµ£¨¾ßÌåÒÀÀµÒÔÊµ¼ÊÌá¹©µÄÎª×¼£©
+
+ä¸‰ã€å…·ä½“å®¢æˆ·ç«¯(æœåŠ¡æ¶ˆè´¹è€…)
+	1.å¼•å…¥äº‘æœåŠ¡æä¾›çš„apiæ¥å£ä¾èµ–ï¼ˆå…·ä½“ä¾èµ–ä»¥å®é™…æä¾›çš„ä¸ºå‡†ï¼‰
 		<dependency>
 			<groupId>com.wl</groupId>
 			<artifactId>cloud-service-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	2.°´ÕÕÒÀÀµjar°ü£¨cloud-service-api£©ÖĞÌá¹©µÄÅäÖÃÎÄ¼şÄ£°å£¨application.properties£©ÅäÖÃ
-		#·şÎñ¶Ë¿Ú
+	2.æŒ‰ç…§ä¾èµ–jaråŒ…ï¼ˆcloud-service-apiï¼‰ä¸­æä¾›çš„é…ç½®æ–‡ä»¶æ¨¡æ¿ï¼ˆapplication.propertiesï¼‰é…ç½®
+		#æœåŠ¡ç«¯å£
 		server.port=8088
 
-		#·şÎñÃû
+		#æœåŠ¡å
 		spring.application.name=cloud-client
 
-		#×¢²áÖĞĞÄ×¢²áµØÖ·
+		#æ³¨å†Œä¸­å¿ƒæ³¨å†Œåœ°å€
 		eureka.client.service-url.defaultZone=http://localhost:8671/eureka
-	3.×¢Èë·şÎñ½Ó¿Ú¼´¿É
+	3.æ³¨å…¥æœåŠ¡æ¥å£å³å¯
 		@Autowired
 		private CloudServiceApi cloudServiceApi;
-		
-¾ßÌåÀı×ÓÇå²Î¿¼ÏîÄ¿ÖĞµÄ£ºexample-demo
+
+å…·ä½“ä¾‹å­æ¸…å‚è€ƒé¡¹ç›®ä¸­çš„ï¼šexample-demo

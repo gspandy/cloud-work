@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wl</groupId>
-	<artifactId>cloud-base</artifactId>
+	<artifactId>cloud-register-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>cloud-base</name>
+	<name>cloud-register-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>

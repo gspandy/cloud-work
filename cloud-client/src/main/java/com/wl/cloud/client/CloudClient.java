@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  */
 
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"com.wl", "cn.ijiami"})
+@EnableFeignClients(basePackages = {"com.wl"})
 @Component
 public class CloudClient {
 }
